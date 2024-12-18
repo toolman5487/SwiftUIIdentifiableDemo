@@ -49,6 +49,15 @@ struct ContentView: View {
                     .animation(.easeInOut, value: selectedItem)
                 }
             }
+            List { ForEach(continents){ item in
+                if item.name == selectedItem {
+                    ForEach(item.lang, id: \.self) { lang in
+                        Text(lang)
+                        }
+                    }
+                }
+            }.listStyle(.plain)
+                .animation(.easeInOut, value: selectedItem)
         }
     }
 }
